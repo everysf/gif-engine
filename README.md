@@ -4,7 +4,9 @@ Gif generator using the Giphy API! Try your favorite actor/actress. Or maybe sea
 
 ## Link
 
-![Check it out here][https://everysf.github.io/gif-engine]
+[Check it out here](https://everysf.github.io/gif-engine)
+
+![screenshot](img/screenshot.png)
 
 # Technologies used
 
