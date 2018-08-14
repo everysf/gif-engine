@@ -2,11 +2,23 @@ body {
     margin: 0;
     font-family: Helvetica, sans-serif;
     overflow: hidden;
+    background-image: url(img/background.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
 }
 
 h1 {
     margin: 0;
     padding: 0px;
+}
+
+#header {
+    height: 70px;
+    margin: 0 auto;
+    display: flex;
+    margin-bottom: 10px;
 }
 
 .gifButton {
@@ -17,16 +29,18 @@ h1 {
     border-radius: 2px;
 }
 
-.gifControls{
+.container{
     z-index: 100;
     position: fixed;
     justify-content: center;
     align-content: center;
-    background-color: rgba(255,255,255, .8);
+    background-color: white;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 25px;
+    border: 2px solid black;
+    box-shadow: 0 5px 30px rgba(0,0,0,.8)
 }
 
 .gifTastic {
@@ -39,6 +53,14 @@ h1 {
     margin: 0 auto 10px;
 }
 
+.gifContainer {
+    height: 500px;
+    background-image: url(img/giftastico.png);
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .gifWrap {
     position: fixed;
     min-width: 100%; 
@@ -48,18 +70,11 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
-.gifRow {
-    display: flex;
-}
-
-.newGifRow {
-    display: flex;
-}
-
 .gifBox {
-    height: 33.3vh;
+    height: 33.3%;
     width: 33.3%;
-    opacity: .5;
+    overflow: hidden;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url(https://media1.giphy.com/media/26vIeMF1uVpEhr9Zu/giphy.gif);
@@ -76,6 +91,7 @@ h1 {
 
 .gifButtonBox {
     margin-top: 10px;
+    margin-bottom: 10px;
     display: flex;
 }
 
@@ -85,4 +101,13 @@ h1 {
 
 #searchGif {
     width: 100%;
+}
+
+p {
+    margin: 0;
+    size: 4px;
+    padding: 3px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 3px;
 }

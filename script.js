@@ -1,75 +1,38 @@
 var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=";
 
-$(document).on("click", "#submit", function() {
+var query;
 
-    var query = $("#searchGif").val().trim()
-    var button = $("<button>").attr("data-search", query)
-    $(button).text(query)
-    $(".gifButtonBox").append(button)
-    console.log(button)
+$(document).on("click", ".gifButton", function render() {
 
-})
+    query = $(this).attr("data-search")
+    $(".gifButton").attr("data-search", query)
+    queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + query +"&rating=g";
 
-// $(document).on("click", ".gifButton", function() {
+    for (var j = 1; j < 10; j++) {
 
-//     query = $(".gifButton").attr("data-search")
-
-//     console.log(query)
-
-//     queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + query;
-
-//     for (var j = 1; j < 10; j++) {
-
-//         event.preventDefault();
-//         $.ajax({
-//         url: queryURL,
-//         method: "GET"
-//         }).then(function(response) {
-
-//         console.log(response)
-
-//         var imageURL = response.data.image_original_url
-
-//         $("#divBox-" + [j]).css("background-image", "url(" + imageURL + ")")
-        
-//     })
-
-//     }   
-// });
-
-$(document).on("click", ".gifButton", function() {
-
-    query = $(".gifButton").attr("data-search")
-
-    queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + query;
-
-    for (var j = 1; j < 4; j++) {
-
-        $("gifRow-" + [j]).empty()
-
-        console.log("gifRow-" + [j])
-
+        $(".gifContainer").empty()
         event.preventDefault();
         $.ajax({
         url: queryURL,
         method: "GET"
         }).then(function(response) {
-
-        console.log(response)
-
-        var imageURL = response.data.image_original_url
-
-        for (var i = 1; i < 4; i++) {
-
+            var imageURL = response.data.image_original_url
+            var rating = '<p class="rating">Rated G</p>'
             var newGifBox = $("<div>")
             $(newGifBox).addClass("gifBox")
             $(newGifBox).css("background-image", "url(" + imageURL + ")")
-            $("#gifRow-" + [i]).append(newGifBox)
-        
-            }
-        
+            $(newGifBox).html(rating)
+            $(".gifContainer").append(newGifBox)
         });
-
+        
     }
-
 });
+
+$(document).on("click", "#submit", function() {
+    query = $("#searchGif").val().trim()
+    var button = $("<button>").attr("data-search", query)
+    $(button).text(query)
+    $(".gifButtonBox").append(button)    
+    $("#searchGif").val("")
+    render(query)
+})
