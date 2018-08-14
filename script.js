@@ -10,21 +10,44 @@ $(document).on("click", "#submit", function() {
 
 })
 
+// $(document).on("click", ".gifButton", function() {
+
+//     query = $(".gifButton").attr("data-search")
+
+//     console.log(query)
+
+//     queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + query;
+
+//     for (var j = 1; j < 10; j++) {
+
+//         event.preventDefault();
+//         $.ajax({
+//         url: queryURL,
+//         method: "GET"
+//         }).then(function(response) {
+
+//         console.log(response)
+
+//         var imageURL = response.data.image_original_url
+
+//         $("#divBox-" + [j]).css("background-image", "url(" + imageURL + ")")
+        
+//     })
+
+//     }   
+// });
+
 $(document).on("click", ".gifButton", function() {
 
-    
-
-    query = $(".gifButton").attr("query")
+    query = $(".gifButton").attr("data-search")
 
     queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + query;
 
     for (var j = 1; j < 4; j++) {
 
-        var currentRow = "#gifRow-" + [j]
+        $("gifRow-" + [j]).empty()
 
-        $(currentRow).empty()
-
-        console.log(currentRow)
+        console.log("gifRow-" + [j])
 
         event.preventDefault();
         $.ajax({
@@ -41,7 +64,7 @@ $(document).on("click", ".gifButton", function() {
             var newGifBox = $("<div>")
             $(newGifBox).addClass("gifBox")
             $(newGifBox).css("background-image", "url(" + imageURL + ")")
-            $(currentRow).append(newGifBox)
+            $("#gifRow-" + [i]).append(newGifBox)
         
             }
         

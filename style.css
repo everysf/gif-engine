@@ -9,8 +9,12 @@ h1 {
     padding: 0px;
 }
 
-button {
+.gifButton {
     font-size: 10px;
+    margin: 1px;
+    padding: 2px;
+    border: 1px solid gray;
+    border-radius: 2px;
 }
 
 .gifControls{
@@ -32,7 +36,7 @@ button {
     height: 40px;
     color: black;
     text-align: center;
-    margin-bottom: 10px
+    margin: 0 auto 10px;
 }
 
 .gifWrap {
@@ -48,7 +52,20 @@ button {
     display: flex;
 }
 
+.newGifRow {
+    display: flex;
+}
+
 .gifBox {
+    height: 33.3vh;
+    width: 33.3%;
+    opacity: .5;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://media1.giphy.com/media/26vIeMF1uVpEhr9Zu/giphy.gif);
+}
+
+.newGifBox {
     height: 33.3vh;
     width: 33.3%;
     opacity: .5;
