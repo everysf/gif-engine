@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+h1 {
+    margin: 0;
+    padding: 0px;
+}
+
+button {
+    font-size: 10px;
+}
+
+.gifControls{
+    z-index: 100;
+    position: fixed;
+    justify-content: center;
+    align-content: center;
+    background-color: rgba(255,255,255, .8);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px;
+}
+
+.gifTastic {
+    letter-spacing: 2px;
+    transition: .5s ease;
+    width: 350px;
+    height: 40px;
+    color: black;
+    text-align: center;
+    margin-bottom: 10px
+}
+
+.gifWrap {
+    position: fixed;
+    min-width: 100%; 
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.gifRow {
+    display: flex;
+}
+
+.gifBox {
+    height: 33.3vh;
+    width: 33.3%;
+    opacity: .5;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://media1.giphy.com/media/26vIeMF1uVpEhr9Zu/giphy.gif);
+}
+
+.gifButtonBox {
+    margin-top: 10px;
+    display: flex;
+}
+
+#createGifForm {
+    display: flex;
+}
+
+#searchGif {
+    width: 100%;
+}
